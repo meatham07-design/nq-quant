@@ -1,6 +1,13 @@
 from __future__ import annotations
 
 import json
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 import numpy as np
 import pandas as pd
 
@@ -138,7 +145,6 @@ def main():
                     if (z.direction==1 and fp>=0.5) or (z.direction==-1 and fp<0.5):
                         counters['pd_fail']+=1; continue
             counters['accepted']+=1; tier_accept[z.tier]+=1
-            # Mark only in diagnostics to avoid repeatedly counting same would-be order.
             z.used=True
         counters['survive_checks']+=len(active)
 
