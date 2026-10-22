@@ -494,3 +494,14 @@ Category D: Portfolio/Execution
 |----------|------|------|------|-------|--------|
 | U2 | +1270.2 | 1.87 | 48.38 | 26.3R | 2012 |
 | F3 | +86.0 | 1.21 | 4.78 | 18.0R | 1127 |
+
+## Claude Code usage efficiency
+
+- Preserve correctness, security, project-specific instructions, and required validation above token savings.
+- Locate relevant code with targeted search; read only necessary files and ranges. Avoid repeated repository-wide scans.
+- Make small, targeted edits rather than rewriting complete files for minor changes.
+- Avoid redundant searches, repeat tests without changes, unnecessary background tasks, and excessive tool output. Batch independent operations where useful.
+- Use concise responses: changes, verification, and next action. Keep a brief handoff after substantial tasks.
+- Warn before unusually expensive work or spawning multiple agents; request approval before costly API calls or installing routers/hooks.
+- Model guidance: Sonnet for routine coding, Opus for difficult debugging or architecture, Haiku subagents for bounded mechanical work when supported. This file cannot switch the main model automatically.
+- Never automatically change model, effort, subscription settings, API credentials, trading execution, or production configuration.
